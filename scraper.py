@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sample web scraping script — demonstration only.
+Sample web scraping script (demonstration only).
 
 Shows a polite scraping pattern: check robots.txt, use a real user agent,
 rate-limit requests, parse listings with BeautifulSoup, and save clean
@@ -22,7 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 
 USER_AGENT = "TanveerBuilds-SampleScraper/1.0 (demo)"
-REQUEST_DELAY = 2.0  # seconds between requests — be polite
+REQUEST_DELAY = 2.0  # seconds between requests: be polite
 
 
 def allowed_by_robots(url):
@@ -84,7 +84,7 @@ def main():
             return
     else:
         sample = Path(__file__).parent / "sample_page.html"
-        print(f"No URL given — parsing the included sample page ({sample.name}).")
+        print(f"No URL given, so parsing the included sample page ({sample.name}).")
         html = sample.read_text(encoding="utf-8")
 
     rows = parse_listings(html)
